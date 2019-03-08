@@ -1,0 +1,53 @@
+
+/**
+ * 2019-02-23  created by LG
+ * 用于配置babel的解析规则
+ * babel生态说明：
+ *   参考网址：https://github.com/lvzhenbang/webpack-play/blob/master/doc/two/babel.md
+ *   babel-loader: https://github.com/lvzhenbang/webpack-play/blob/master/doc/first/babel-loader.md
+ *   1、@babel/core：主要实现了解析和输出的功能，而不实现转换的功能
+ *   2、@babel/polyfill：它用来实现的是ES的API的转换（如：ES6引入了Array.from()，而ES5中却没有）
+ *   3、@babel/runtime：实现语法结构的改变（如：ES6的 () => console.log('webpack') 到ES5的function() { console.log('webpack) }）； 
+ *   4、@babel/plugin-*：调用@babel/polyfill, @babel/runtime来实现ES6+新语法特性到低版本ES（如：ES5）的转换；
+ *   5、@babel/preset-env：用来指定@babel/plugin-*和@babel/polyfill所服务的应用要满足的部署、访问环境
+ *
+ * webpack如何babel来转换JavaScript
+ *   1、 webpack调用babel-loader来启用babel来处理*.js文件块的代码，也就是使用@babel/core依赖；
+ *   2、 @babel/core依赖于@babel/babel-preset-env来调用@babel/plugin-*或@babel/polyfill, @babel/runtime
+        （如果在@babel/preset-env中使用了@babel/plugin-*，那么就会依据@babel/plugin-*调用@babel/polyfill, @babel/runtime；
+        反之，则直接调用@babel/polyfill, @babel/runtime）； 
+ *   3、 @babel/polyfill调用core-js来处理ES的API 
+ *   4、 @babel/runtime则可以直接处理ES的语法
+ * 
+ * 区分@babel/plugin-transform-runtime和@babel/runtime
+ *    1、@babel/plugin-transform-runtime就是一个插件（babel官方团队维护），它依赖于@babel/runtime。它可以让使用者实现自定义
+ *    2、@babel/plugin-transform-runtime只能用于webpack的开发模式，而生产模式需要安装babel-runtime才会起作用
+ *    3、@babel/plugin-transform-runtime可以通过配置使用@babel/runtime-corejs2，而不是@babel/runtime
+ */
+
+// 也可以 命名为：babel.config.js  灵活，比如在生产和开发做分别配置
+// 也可以 在package.json中增加babel,来匹配以下规则
+// 也可以用 .babelrc.js的方式来配置规则   灵活，比如在生产和开发做分别配置
+
+ {
+  "presets": [
+    [
+      "@babel/preset-env", { // 只会为目标浏览器中没有的功能加载转换插件
+        "targets": {
+          "node": "current"
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-transform-runtime",{
+        "helpers": true, // 提取`babel`编译产生的公共的模块
+        "corejs": 2, // 用来解决非实例化的方法API的转化，调用@babel/runtime，默认false; 设置2时，调用@babel/runtime-corejs2
+        "regenerator": true, // 解决全局作用域被污染问题 // 默认true
+        "useESModules": false // 不使用`@babel/plugin-transform-modules-commonjs`对模块的引入方式进行转换，默认为fasle
+      }
+    ],
+    "babel-plugin-transform-object-rest-spread"
+  ]
+ }

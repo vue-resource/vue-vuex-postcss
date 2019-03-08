@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {margin:0;padding: 0}
+    li{list-style: none}
+    a{text-decoration: none}
+    .wrap {
+      width:600px;
+      margin:100px auto;
+    }
+    [data-role='tab']{
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    [data-role='tab-list'] {
+      height: 40px;
+      border-bottom: 1px solid #ddd;
+    }
+    [data-role='tab-list'] [data-role='tab-item'] {
+      float: left;
+      padding:0 10px;
+      font-size: 14px;
+      line-height: 40px;
+      cursor: pointer;
+      border-right:1px solid #ddd;
+    }[data-role='tab-list'] [data-role='tab-item'].active {
+      color:#04ad02;
+    }
+    [data-role='tab-content']{
+      padding: 20px;
+      min-height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a href="https://www.jianshu.com/p/0aa8c9c52f38" target="_blank">参考链接</a>
+    <div data-role="tab" id="tab"></div>
+    <div data-role="tab" id="tab2" style="margin-top: 20px;"></div>
+  </div>
+  <script src="./tab.js"></script>
+  <script>
+    var tab = new Tab({
+      id: '#tab',
+      tabs: ['男装','女装','童装'],
+      content: ['1111','2222','33333']
+    })
+
+    var tab2 = new AutoTab({
+      id: '#tab2',
+      tabs: ['NBA','CBA','NCAA'],
+      content: ['1111','2222','33333'],
+      duration: 2000
+    })
+  </script>
+</body>
+</html>
