@@ -140,7 +140,7 @@ exports.cssLoaders = (option) => {
   }
   return {
     css: generatorLoader(),
-    sss: generatorLoader(),
+    postcss: generatorLoader(),
     less: generatorLoader('less'),
     sass: generatorLoader('sass', { indentedSyntax: true }),
     scss: generatorLoader('sass'),

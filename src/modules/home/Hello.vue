@@ -1,5 +1,5 @@
 <template>
-  <div class="menu_link">Just Do It !</div>
+  <div class="btn-light">Just Do It !</div>
 </template>
 <script>
   export default {

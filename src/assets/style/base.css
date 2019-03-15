@@ -1,6 +1,6 @@
 @import './color.css';
 @import './bg.css';
-/* @import './button.css'; */
+@import './button.css'; 
 @import './font.css';
 @import './tools.css';
 
@@ -11,6 +11,4 @@
 }
 li, ul li, ol li {list-style: none;}
 a {color:var(--color-dark);text-decoration: none;}
-
-
 

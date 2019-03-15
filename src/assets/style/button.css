@@ -16,5 +16,4 @@
   }
 }
 
-@mixin bg_button light, var(----color-light);
-@mixin bg_button success,var(----color-success);
+@mixin bg_button light, var(--color-light);
