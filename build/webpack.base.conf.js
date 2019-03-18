@@ -1,6 +1,7 @@
  /**
   * 2019-02-22 created by LG
   * 基础配置：可用于开发，生产，测试
+  * webpack入门  https://gitee.com/janking/Infinite-f2e/issues/IDOHZ
   */
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')

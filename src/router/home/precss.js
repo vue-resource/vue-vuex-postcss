@@ -1,19 +1,19 @@
-import Hello from '@/modules/home/Hello'
+import Precss from '@/modules/home/Precss'
 
 export default {
-  path: '/hello',
-  name: 'hello',
+  path: '/precss',
+  name: 'precss',
   meta: {
-    pathName: 'hello'
+    pathName: 'precss'
   },
   component: {render: h => h('router-view', '')},
   children: [
     {
       path: '',
       meta:{
-        title:"hello"
+        title:"precss"
       },
-      component: Hello
+      component: Precss
     }
   ]
 }

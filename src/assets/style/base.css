@@ -1,14 +1,19 @@
-@import './color.css';
-@import './bg.css';
-@import './button.css'; 
-@import './font.css';
-@import './tools.css';
-
-
-*{
-  margin:0;
-  padding:0;
+:root {
+  /* 颜色 */
+  --color-base: #ffffff;
+  --color-light:#e4e3dd;
+  --color-dark:#333333;
+  --color-info:#10a5e8;
+  --color-warning:#d2ae0a;
+  --color-danger:#f90d0d;
+  --color-success:#359c08;
+  /* font */
+  --font-12: 12px;
+  --font-14: 14px;
+  --font-16: 16px;
+  /* size */
+ 
 }
-li, ul li, ol li {list-style: none;}
-a {color:var(--color-dark);text-decoration: none;}
+
+
 

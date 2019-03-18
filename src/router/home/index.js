@@ -1,14 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import hello from './hello'
+import precss from './precss'
 
 
 Vue.use(Router)
 
 const router = new Router({
   routes: [
-    hello
+    precss
   ]
 })
 

@@ -3,7 +3,7 @@ import axios from 'axios'
 import ElementUI from 'element-ui'
 
 import 'element-ui/lib/theme-chalk/index.css'
-import '@/assets/style/base.css'
+import '@/assets/style/common.css'
 
 import services from '@/api'
 import Tools from '@/utils/tools' // 工具集

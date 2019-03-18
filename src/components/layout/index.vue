@@ -74,12 +74,12 @@
           },{
             id:'2',
             name:'首页管理',
-            url: '/home#/hello',
+            url: '/home#/precss',
             children:[
               {
                 id:'2-1',
-                name:'hello',
-                url: '/hello/'
+                name:'precss',
+                url: '/precss/'
               }
             ]
           }
